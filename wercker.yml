@@ -1,0 +1,50 @@
+box: nodesource/trusty
+build:
+  steps:
+    - script:
+        name: set timezone
+        code: export TZ="Asia/Tokyo"
+    - npm-install
+    - script:
+        name: build
+        code: ./build.sh $WERCKER_SOURCE_DIR/_slide/
+  after-steps:
+    - slack-notifier:
+        url: $SLACK_URL
+        channel: longkey1
+        username: wercker
+deploy:
+  steps:
+    - script:
+        name: make .ssh directory
+        code: mkdir -p "$HOME/.ssh"
+    - add-to-known_hosts:
+        hostname: github.com
+    - create-file:
+        name: write ssh key
+        filename: $HOME/.ssh/id_rsa
+        overwrite: true
+        hide-from-log: true
+        content: $WERCKER_SSH_KEY_PRIVATE
+    - script:
+        name: set permissions for ssh key
+        code: chmod 0600 $HOME/.ssh/id_rsa
+    - script:
+        name: deploy to github
+        code: |
+          git clone -b gh-pages git@github.com:longkey1/slides.git
+          pushd slides
+          git clean -dxf
+          git rm $(git ls-files)
+          cp -r $WERCKER_SOURCE_DIR/_slide/* .
+          git add -A
+          git config user.email "longkey1@gmail.com"
+          git config user.name "wercker"
+          git commit -m "Site updated at $(date +'%Y.%m.%d %H:%M:%S')" --allow-empty
+          git push origin gh-pages
+          popd
+  after-steps:
+    - slack-notifier:
+        url: $SLACK_URL
+        channel: longkey1
+        username: wercker
