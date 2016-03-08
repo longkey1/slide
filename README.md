@@ -1,2 +1,2 @@
-slide is longkey1's slide page
+longkey1's slide repository
 ====
