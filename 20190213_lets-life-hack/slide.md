@@ -2,7 +2,7 @@
 
 # 生活をハックしよう
 
-2019.02.13 Nagoya.php #13 LT
+2019.02.13 Nagoya.php #14 LT
 
 <small>longkey1</small>
 
@@ -14,8 +14,10 @@
 
 # longkey1
 - 生まれも育ちも名古屋
-- Webサービスのバックエンド担当（PHP）
-- I Love Linux
+- Webサービスの主にバックエンド担当
+- I love Linux!
+
+![180% center](longkey1.gif)
 
 ---
 
@@ -73,16 +75,16 @@
 
 - はてブをブックマーク数で簡易フィルタリングしたRSSフィードを作成
 - Webアプリ
-- PHP製
 - https://hatebufe.longkey1.net/
+- PHP製
 
 ---
 
 # diary
 
 - 日記をテキストエディタで簡単に書くための補助ツール
-- CLIツール
 - プライベートでは日記、仕事では日々のメモ用に利用
+- CLIツール
 - Go製
 
 ---
@@ -121,13 +123,13 @@
 # monn
 
 - GoogleなどのOAuth認証プロキシサーバ
-- 主にNGINXのauth request用
+- 主にNGINXのauth request専用
 - Webアプリ
 - Go製
 
 ---
 
-# 結論
+# 改めて結論
 
 ---
 
