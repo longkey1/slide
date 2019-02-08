@@ -104,7 +104,7 @@
     - クローズの同期
     - コメントのSlack通知
     - タスクのMarkdown化
-- 以前はSlilex、2018年にSymfony4へ書き換え
+- 以前はSilex、2018年にSymfony4へ書き換え
 - Webアプリ
 - PHP製
 
