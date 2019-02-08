@@ -2,7 +2,7 @@
 
 # 生活をハックしよう
 
-2019.01.13 Nagoya.php #13 LT
+2019.02.13 Nagoya.php #13 LT
 
 <small>longkey1</small>
 
